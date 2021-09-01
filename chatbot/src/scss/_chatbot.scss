@@ -1,0 +1,71 @@
+.chatbot {
+    display: flex;
+    justify-content: center;
+
+    .content {
+
+        h1 {
+            text-align: center;
+        }
+
+        .chat-room {
+            display: grid;
+            width: 25rem;
+            position: relative;
+        }
+    }
+}
+
+.chatMessage {
+    font-weight: 200;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: .5rem;
+
+    &.sent {
+        justify-self: end;
+        background-color: $background-color-sent;
+        color: $color-sent;
+    }
+
+    &.received {
+        justify-self: start;
+        background-color: $background-color-received;
+        color: $color-received;
+    }
+
+}
+
+.inputForm {
+    position: fixed;
+    bottom: 10rem;
+    width: 25rem;
+    display: flex;
+
+    .inputField {
+        flex-grow: 1;
+        margin: .5rem .2rem 0 0;
+        padding: .5rem;
+        border-radius: .5rem;
+        border: none;
+        width: 100%;
+    }
+
+    .inputButton {
+        background-color: $background-color-sent;
+        margin: .5rem 0 0 .2rem;
+        padding: .5rem;
+        border-radius: .5rem;
+        border: none;
+        // width: 2rem;
+        // height: 2rem;
+
+        i {
+            color: $color;
+        }
+
+        &:disabled {
+            background-color: $background-color-disabled;
+        }
+    }
+}

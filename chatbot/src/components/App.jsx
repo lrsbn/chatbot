@@ -2,6 +2,8 @@ import React from 'react';
 import { ChatMessage } from './ChatMessage';
 
 export const App = () => {
+    const [currentMessage, setCurrentMessage] = React.useState("");
+
     const messages = [
         {
             text: "Test",
@@ -15,14 +17,23 @@ export const App = () => {
         }
     ]
 
+    const submitMessage = () => {
+
+    }
+
     return(
         <div className="chatbot">
-            <h1>Chatbot</h1>
             <div className="content">
-                {console.log(messages)}
-                {messages && messages.map(msg => {
-                    return <ChatMessage key={msg.key} message={msg} />
-                })}
+                <h1>Chatbot</h1>
+                <div className="chat-room">
+                    {messages && messages.map(msg => {
+                        return <ChatMessage key={msg.key} message={msg} />
+                    })}
+                </div>
+                <form className="inputForm" onSubmit={submitMessage} >
+                    <input className="inputField" value={currentMessage} type="text" placeholder="Ask Something" onChange={(e) => setCurrentMessage(e.target.value)} />
+                    <button className="inputButton" type="submit" disabled={!currentMessage}><i className="pi pi-send"/></button>
+                </form>
             </div>
         </div>
     )
