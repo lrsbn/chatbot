@@ -4,6 +4,8 @@ import { ChatMessage } from './ChatMessage';
 export const App = () => {
     const [currentMessage, setCurrentMessage] = React.useState("");
 
+    const dummy = React.useRef();
+
     const messages = [
         {
             text: "Test",
@@ -25,8 +27,10 @@ export const App = () => {
         })
     }
 
-    const submitMessage = () => {
-
+    const submitMessage = (e) => {
+        e.preventDefault();
+        setCurrentMessage("");
+        dummy.current.scrollIntoView({ behavior: "smooth"});
     }
 
     return(
@@ -37,6 +41,7 @@ export const App = () => {
                     {messages && messages.map(msg => {
                         return <ChatMessage key={msg.key} message={msg} />
                     })}
+                    <span ref={dummy} />
                 </div>
                 <form className="inputForm" onSubmit={submitMessage} >
                     <input className="inputField" value={currentMessage} type="text" placeholder="Ask Something" onChange={(e) => setCurrentMessage(e.target.value)} />
