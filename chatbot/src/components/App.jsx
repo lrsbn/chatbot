@@ -7,15 +7,23 @@ export const App = () => {
     const messages = [
         {
             text: "Test",
-            key: "1",
+            key: "test",
             sentByMe: true
         },
         {
             text: "AnotherTest",
-            key: "2",
+            key: "anothertest",
             sentByMe: false
         }
     ]
+
+    for (var i = 0; i < 17; i++) {
+        messages.push({
+            text: `Test${i}`,
+            key: i,
+            sentByMe: i % 2 === 0 ? true : false
+        })
+    }
 
     const submitMessage = () => {
 

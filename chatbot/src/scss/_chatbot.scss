@@ -1,17 +1,16 @@
 .chatbot {
     display: flex;
     justify-content: center;
-
+    
     .content {
+        width: max(25%, 25rem);
 
         h1 {
             text-align: center;
         }
-
+        
         .chat-room {
             display: grid;
-            width: 25rem;
-            position: relative;
         }
     }
 }
@@ -38,17 +37,19 @@
 
 .inputForm {
     position: fixed;
-    bottom: 10rem;
-    width: 25rem;
-    display: flex;
+    bottom: 0;
+    padding-bottom: 1rem;
+    width: inherit;
+    background-color: $background-color;
+    display: grid;
+    grid-template-columns: auto fit-content(5rem);
 
     .inputField {
-        flex-grow: 1;
         margin: .5rem .2rem 0 0;
         padding: .5rem;
         border-radius: .5rem;
         border: none;
-        width: 100%;
+        line-height: 1.5rem;
     }
 
     .inputButton {
@@ -57,8 +58,7 @@
         padding: .5rem;
         border-radius: .5rem;
         border: none;
-        // width: 2rem;
-        // height: 2rem;
+        width: 3rem;
 
         i {
             color: $color;
