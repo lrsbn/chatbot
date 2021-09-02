@@ -25,8 +25,8 @@ export const App = () => {
         }
         setCurrentMessage("");
         
-        const responseMessage = await chatbot.ask(buildMessage);
-        setMessages([...messages, buildMessage, responseMessage]);
+        const responseMessages = await chatbot.ask(buildMessage);
+        setMessages([...messages, buildMessage, ...responseMessages]);
 
         dummy.current.scrollIntoView({ behavior: "smooth"});
     }
