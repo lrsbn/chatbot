@@ -3,31 +3,34 @@ import { ChatMessage } from './ChatMessage';
 
 export const App = () => {
     const [currentMessage, setCurrentMessage] = React.useState("");
-
     const dummy = React.useRef();
-
-    const messages = [
+    const initialTestMessages = [
         {
             text: "Test",
             key: "test",
             sentByMe: true
         },
         {
-            text: "AnotherTest",
+            text: "AnotherTestLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
             key: "anothertest",
             sentByMe: false
         }
-    ]
-
+    ];
+    const testMessages = [];
     for (var i = 0; i < 17; i++) {
-        messages.push({
+        testMessages.push({
             text: `Test${i}`,
             key: i,
             sentByMe: i % 2 === 0 ? true : false
         })
     }
+    const messages = [...initialTestMessages, ...testMessages]
 
-    const submitMessage = (e) => {
+    React.useEffect(() => {
+        dummy.current.scrollIntoView({behavior: "smooth"});
+    }, [])
+
+    const submitMessage = async (e) => {
         e.preventDefault();
         setCurrentMessage("");
         dummy.current.scrollIntoView({ behavior: "smooth"});
