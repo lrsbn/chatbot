@@ -1,4 +1,3 @@
-import React from 'react';
 import { answerIdGenerator } from './utils';
 
 export const chatbot = new class Chatbot {
@@ -14,7 +13,6 @@ export const chatbot = new class Chatbot {
 
     ask(questionObject) {
         const answer = this.answers.filter(element => element.question.includes(questionObject.text));
-        console.log(answer);
 
         if (!answer.length) {
             return {
@@ -29,8 +27,14 @@ export const chatbot = new class Chatbot {
             key: answerIdGenerator.next().value,
             sentByMe: false
         }
-
         // Falls das Array länger sein sollte, dann kann man theoretisch auch mehrere Messages konstruieren
+    }
 
+    initialMessage() {
+        return {
+            text: "Hi, I'm a helper bot, ask me anything and I might be able to help you :)",
+            key: answerIdGenerator.next().value,
+            sentByMe: false
+        }
     }
 }()
