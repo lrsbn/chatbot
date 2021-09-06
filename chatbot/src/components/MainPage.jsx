@@ -51,11 +51,16 @@ export const MainPage = () => {
     return(
         <div className="chatbot">
             <div className="content">
-            <h3> User : {currentUser.email}</h3>
-            {error && <div className="errors">{error}</div>}
-            <button onClick={handleLogout}>log out</button>
+                <div className="user-information">
+                    {/* <h3>USER: {currentUser.email}</h3> */}
+                    <h1>Chatbot</h1>
+                    <div className="log-out-btn">
+                        <button onClick={handleLogout}>Log out</button>
+                    </div>
+                    {error && <div className="errors">{error}</div>}
+                </div>
+                <div className="user-email">Currently Logged in as: {currentUser.email}</div>
             
-                <h1>Chatbot</h1>
                 <div className="chat-room">
                     {messages && messages.map(msg => {
                         return <ChatMessage key={msg.key} message={msg} />
