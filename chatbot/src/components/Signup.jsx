@@ -1,6 +1,6 @@
 
 import React, {useRef, useState} from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 
 export default function Signup() {
@@ -10,6 +10,7 @@ export default function Signup() {
     const { signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -19,6 +20,7 @@ export default function Signup() {
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value); 
+            history.push("/")
             
         } catch {
             setError('Failed to create an account')

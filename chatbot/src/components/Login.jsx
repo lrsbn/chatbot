@@ -1,20 +1,22 @@
 import React, { useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export const Login = () => {
-    const { login } = useAuth();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const { login } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState("");
+    const history = useHistory();
 
     const submitLogin = async (e) => {
         e.preventDefault();
         try {
             setError("");
             setLoading(true);
-            // await login(emailRef.current.value, passwordRef.current.value);
+           await login(emailRef.current.value, passwordRef.current.value);
+           history.push("/")
         } catch {
             setError("There was an error logging in");
         }
