@@ -38,7 +38,6 @@ export const MainPage = () => {
     
     async function handleLogout() {
         setError('')
-
         try {
             await logout()
             history.push('/login')

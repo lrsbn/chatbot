@@ -22,7 +22,7 @@ export function AuthProvider({children}) {
     }
 
     function logout(){
-        return signOut()
+        return signOut(auth)
     }
     useEffect(()=> {
         const unsubscribe =  auth.onAuthStateChanged(user => {
