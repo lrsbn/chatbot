@@ -7,7 +7,7 @@ export const Login = () => {
     const passwordRef = useRef();
     const { login } = useAuth();
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState("");
+    const [loading, setLoading] = useState(false);
     const history = useHistory();
 
     const submitLogin = async (e) => {
@@ -15,11 +15,12 @@ export const Login = () => {
         try {
             setError("");
             setLoading(true);
-           await login(emailRef.current.value, passwordRef.current.value);
-           history.push("/")
+            await login(emailRef.current.value, passwordRef.current.value);
+            history.push("/")
         } catch {
             setError("There was an error logging in");
         }
+        setLoading(false)
     }
 
     return(
