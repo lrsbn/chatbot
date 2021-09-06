@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { chatbot } from './chatbotResponder';
 import { ChatMessage } from './ChatMessage';
 import { idGenerator } from './utils';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export const MainPage = () => {
@@ -11,7 +11,7 @@ export const MainPage = () => {
     const dummy = React.useRef();
     const [error, setError] = useState("");
     const {currentUser, logout} = useAuth();
-    const history = useHistory;
+    const history = useHistory();
 
     React.useEffect(() => {
         setMessages([chatbot.initialMessage()]);
@@ -53,7 +53,9 @@ export const MainPage = () => {
         <div className="chatbot">
             <div className="content">
             <h3> User : {currentUser.email}</h3>
-            <button><NavLink className="login-href" to="/login" onClick={handleLogout}>log out</NavLink></button>
+            {error && <div className="errors">{error}</div>}
+            <button onClick={handleLogout}>log out</button>
+            
                 <h1>Chatbot</h1>
                 <div className="chat-room">
                     {messages && messages.map(msg => {
