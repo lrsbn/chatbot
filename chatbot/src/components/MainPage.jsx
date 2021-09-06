@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { chatbot } from './chatbotResponder';
 import { ChatMessage } from './ChatMessage';
 import { idGenerator } from './utils';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 export const MainPage = () => {
     const [currentMessage, setCurrentMessage] = React.useState("");
     const [messages, setMessages] = React.useState([]);
     const dummy = React.useRef();
+    const [error, setError] = useState("");
+    const {currentUser, logout} = useAuth();
+    const history = useHistory;
 
     React.useEffect(() => {
         setMessages([chatbot.initialMessage()]);
@@ -30,10 +35,25 @@ export const MainPage = () => {
 
         dummy.current.scrollIntoView({ behavior: "smooth"});
     }
+    
+    async function handleLogout() {
+        setError('')
+
+        try {
+            await logout()
+            history.push('/login')
+        } catch {
+            setError('Failed to log out')
+        }
+
+    }
+
 
     return(
         <div className="chatbot">
             <div className="content">
+            <h3> User : {currentUser.email}</h3>
+            <button><NavLink className="login-href" to="/login" onClick={handleLogout}>log out</NavLink></button>
                 <h1>Chatbot</h1>
                 <div className="chat-room">
                     {messages && messages.map(msg => {
