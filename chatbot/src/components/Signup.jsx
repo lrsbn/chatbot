@@ -13,19 +13,22 @@ export default function Signup() {
     const history = useHistory()
 
     async function handleSubmit(e) {
-        e.preventDefault()
-        if ( passwordRef.current.value !== passwordConfirmRef.current.value) return setError('Passwords do not match') 
+        e.preventDefault();
+        if ( passwordRef.current.value !== passwordConfirmRef.current.value) return setError('Passwords do not match');
+        if (passwordRef.current.value.length <= 6) return setError("Password must be at least six characters long");
 
-        try {
-            setError('')
-            setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value); 
-            history.push("/")
-            
-        } catch {
-            setError('Failed to create an account')
+        if (!loading) {
+            setError("");
+            setLoading(true);
+            signup(emailRef.current.value, passwordRef.current.value).then(response => {
+                // Evtl. Toast bei erfolgreichem Signup
+                history.push("/");
+            }).catch(error => {
+                setError(error.code.replace("auth/", "").replace("-", " "));
+            }).finally(() => {
+                setLoading(false);
+            })
         }
-        setLoading(false)
     }
 
     return(

@@ -12,15 +12,18 @@ export const Login = () => {
 
     const submitLogin = async (e) => {
         e.preventDefault();
-        try {
+        if (!loading) {
             setError("");
             setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
-            history.push("/")
-        } catch {
-            setError("There was an error logging in");
+            login(emailRef.current.value, passwordRef.current.value).then(response => {
+                // evtl. Toast um Successful Login anzuzeigen
+                history.push("/");
+            }).catch(error => {
+                setError(error.code.replace("auth/", "").replace("-", " "));
+            }).finally(() => {
+                setLoading(false)
+            })
         }
-        setLoading(false)
     }
 
     return(
