@@ -4,7 +4,7 @@
     text-align: center;
 
     .signup-title {
-        color: $background-color-disabled;
+        color: $background-color-sent;
         margin-bottom: 3rem;
     }
 
@@ -39,7 +39,7 @@
                 border: none;
                 border-radius: .5rem;
                 padding: .5rem;
-                background-color: $background-color-disabled;
+                background-color: $background-color-sent;
                 color: white;
                 transition: background-color .2s ease-in-out, color .2s ease-in-out;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -56,7 +56,7 @@
             color: white;
             margin-left: 1rem;
             padding: .5rem 1rem;
-            background-color: $background-color-disabled;
+            background-color: $background-color-sent;
             border-radius: .5rem;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             transition: background-color .2s ease-in-out, color .2s ease-in-out;

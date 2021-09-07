@@ -52,7 +52,6 @@ export const MainPage = () => {
         <div className="chatbot">
             <div className="content">
                 <div className="user-information">
-                    {/* <h3>USER: {currentUser.email}</h3> */}
                     <h1>Chatbot</h1>
                     <div className="log-out-btn">
                         <button onClick={handleLogout}>Log out</button>

@@ -4,12 +4,17 @@
     
     .content {
         width: max(30%, 18rem);
+        position: relative;
 
         .user-information {
-            // display: flex;
-            // flex-direction: column;
+            position: fixed;
+            top: 0;
+            background-color: $background-color-header;
+            border-radius: 0 0 .5rem .5rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: inherit;
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 1fr auto;
             row-gap: .5rem;
             align-items: center;
 
@@ -24,7 +29,7 @@
                     border-radius: .5rem;
                     margin: .5rem 0 0 .5rem;
                     padding: 1rem .5rem 1rem .5rem;
-                    background-color: $background-color-disabled;
+                    background-color: $background-color-sent;
                     color: $color;
                     transition: background-color .2s ease-in-out, color .2s ease-in-out;
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -52,6 +57,7 @@
         }
         
         .chat-room {
+            margin-top: 6rem;
             display: grid;
             margin-bottom: 3.5rem;
         }
