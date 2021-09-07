@@ -10,7 +10,7 @@ export const Login = () => {
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
-    const submitLogin = async (e) => {
+    const submitLogin = (e) => {
         e.preventDefault();
         if (!loading) {
             setError("");

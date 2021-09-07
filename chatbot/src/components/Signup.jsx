@@ -12,10 +12,10 @@ export default function Signup() {
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
         if ( passwordRef.current.value !== passwordConfirmRef.current.value) return setError('Passwords do not match');
-        if (passwordRef.current.value.length <= 6) return setError("Password must be at least six characters long");
+        if (passwordRef.current.value.length < 6) return setError("Password must be at least six characters long");
 
         if (!loading) {
             setError("");
