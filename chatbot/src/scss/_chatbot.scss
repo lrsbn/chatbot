@@ -29,14 +29,14 @@
                     border-radius: .5rem;
                     margin: .5rem 0 0 .5rem;
                     padding: 1rem .5rem 1rem .5rem;
-                    background-color: $background-color-sent;
+                    // background-color: $background-color-sent;
+                    background-color: $background-color;
                     color: $color;
-                    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+                    transition: background-color .2s ease-in-out;
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                     
                     &:hover {
-                        background-color: white;
-                        color: black;
+                        background-color: $background-color-hover-alt;
                     }
                 }
             }
@@ -92,13 +92,10 @@
     padding-bottom: 1rem;
     width: inherit;
     background-color: $background-color;
-    // display: flex;
     display: grid;
     grid-template-columns: auto fit-content(5rem);
-    // grid-template-columns: 5fr 1fr;
 
     .inputField {
-        // flex-grow: 1;
         margin: .5rem .2rem 0 0;
         padding: .5rem;
         border-radius: .5rem;
@@ -107,18 +104,26 @@
     }
 
     .inputButton {
+        cursor: pointer;
         background-color: $background-color-sent;
         margin: .5rem 0 0 .2rem;
         padding: .5rem;
         border-radius: .5rem;
         border: none;
         width: 3rem;
+        transition: background-color .2s ease-in-out;
 
         i {
             color: $color;
         }
 
+        &:hover,
+        &:focus {
+            background-color: $background-color-hover;
+        }
+
         &:disabled {
+            cursor: default;
             background-color: $background-color-disabled;
         }
     }

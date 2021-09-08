@@ -4,7 +4,7 @@ import { answerIdGenerator } from './utils';
 export const chatbot = new class Chatbot {
     constructor() {
         this.answers = answers;
-        this.genericResponse = "Sorry, I can't understand what you're asking. ";
+        this.genericResponse = "Sorry, I can't understand what you're asking. For more help, visit our website or contact our support team. ";
         this.multipleResponses = "What did you mean exactly? ";
         this.initialResponse = "Hi, I'm a helper bot, ask me anything and I might be able to help you :)";
     }
