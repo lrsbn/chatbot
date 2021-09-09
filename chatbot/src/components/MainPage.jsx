@@ -23,6 +23,9 @@ export const MainPage = () => {
 
     const submitMessage = async (e) => {
         e.preventDefault();
+        if (currentMessage.trim() === "") {
+            return setCurrentMessage("");
+        }
         const buildMessage = {
             text: currentMessage || "",
             key: idGenerator.next().value,
@@ -36,15 +39,13 @@ export const MainPage = () => {
         dummy.current.scrollIntoView({ behavior: "smooth"});
     }
     
-    async function handleLogout() {
-        setError('')
-        try {
-            await logout()
-            history.push('/login')
-        } catch {
-            setError('Failed to log out')
-        }
-
+    const handleLogout = () => {
+        setError('');
+        logout().then(() => {
+            history.push("/login");
+        }).catch(() => {
+            setError("Failed to log out");
+        });
     }
 
 
