@@ -2,11 +2,14 @@
 // Variables
 $font: 'Exo 2', sans-serif;
 $background-color: hsl(0, 0%, 21%);
-$background-color-header: hsl(0, 0%, 15%);
+// $background-color-header: hsl(0, 0%, 15%);
+$background-color-header: hsl(202, 44%, 54%);
 $color: white;
 $color-sent: $color;
-$background-color-sent: hsla(202, 100%, 70%, 0.671);
+$background-color-sent: hsl(202, 44%, 54%);
 $background-color-disabled: hsla(202, 100%, 80%, 0.671);
+$background-color-hover: hsla(202, 100%, 50%, 0.671);
+$background-color-hover-alt: hsl(0, 0%, 11%);
 $color-received: black;
 $background-color-received: hsl(0, 0%, 95%);
 $error-color: hsl(0, 85%, 70%);
