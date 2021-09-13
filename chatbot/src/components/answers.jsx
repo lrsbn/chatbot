@@ -28,6 +28,10 @@ const answerArray = [
 		answers: "Go to https://support.hp.com/de-de/drivers/printers , enter your printer product number, click on download."
 	},
 	{
+		question: "How can I update my windows?",
+		answers: "Select the Start button, then select Settings > Update & security > Windows Update."
+	},
+	{
 		
 	}
 ];
