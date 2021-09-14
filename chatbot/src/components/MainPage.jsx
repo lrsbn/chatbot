@@ -19,7 +19,7 @@ export const MainPage = () => {
 
     React.useEffect(() => {
         dummy.current.scrollIntoView({behavior: "smooth"});
-    },[messages])
+    },[messages]);
 
     const submitMessage = async (e) => {
         e.preventDefault();
