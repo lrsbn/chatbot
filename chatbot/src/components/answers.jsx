@@ -38,6 +38,10 @@ const answerArray = [
 	{
 		question: "What can you do?",
 		answer: "I can answer the following questions:"+Array(30).fill('\xa0').join('') +" How do I change my windows password?, How can I download drivers for my printer?, How can I update my windows?, What is the customer support number?"
+	},
+	{
+		question: "Warum läd die Seite nicht",
+		answer:"Überprüfe die DNS Einstungen"
 	}
 
 ];
