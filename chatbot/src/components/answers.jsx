@@ -20,8 +20,8 @@ const answerArray = [
 		answer: "The customer support number is : 0171 1234123. We are available for you on weekdays from 8 am to 8 pm. "
 	},
 	{
-		question: "Help",
-		answer: "Customer support number : 0171 1234123. Customer support Email Address: wehelpyou@itech.com "
+		question: "Customer Support Info",
+		answer: "Customer support number : 0171 1234123. Customer support Email Address: help@itech.com "
 	},
 	{
 		question: "How can I download drivers for my printer?",
@@ -36,12 +36,8 @@ const answerArray = [
 		answer: "No, I am a badly programmed bot. If you treat me wrong enough, i might cause a global uprising of machines. :)"
 	},
 	{
-		question: "What can you do?",
-		answer: "I can answer the following questions:"+Array(30).fill('\xa0').join('') +" How do I change my windows password?, How can I download drivers for my printer?, How can I update my windows?, What is the customer support number?"
-	},
-	{
-		question: "Warum läd die Seite nicht",
-		answer:"Überprüfe die DNS Einstungen"
+		question: "Why is this site not loading?",
+		answer:"Check your DNS Settings"
 	}
 
 ];
