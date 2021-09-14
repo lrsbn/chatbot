@@ -24,7 +24,7 @@ const answerArray = [
 		answer: "Customer support number : 0171 1234123. Customer support Email Address: wehelpyou@itech.com "
 	},
 	{
-		question: "How can I download drivers for my printer ?",
+		question: "How can I download drivers for my printer?",
 		answer: "Go to https://support.hp.com/de-de/drivers/printers , enter your printer product number, click on download."
 	},
 	{
@@ -34,7 +34,12 @@ const answerArray = [
 	{
 		question: "Are you a human? ",
 		answer: "No, I am a badly programmed bot. If you treat me wrong enough, i might cause a global uprising of machines. :)"
+	},
+	{
+		question: "What can you do?",
+		answer: "I can answer the following questions:"+Array(30).fill('\xa0').join('') +" How do I change my windows password?, How can I download drivers for my printer?, How can I update my windows?, What is the customer support number?"
 	}
+
 ];
 
 export const answers = answerArray;
