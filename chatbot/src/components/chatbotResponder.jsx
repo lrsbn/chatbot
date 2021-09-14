@@ -12,6 +12,7 @@ export const chatbot = new class Chatbot {
     ask(questionObject) {
         const answer = this.answers.filter(element => element.question.includes(questionObject.text));
         const responseArray = [];
+        console.log(answer);
 
         // Array leer (keine Übereinstimmung gefunden)
         if (!answer.length) {

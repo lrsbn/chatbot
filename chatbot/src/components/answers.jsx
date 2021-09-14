@@ -13,23 +13,23 @@ const answerArray = [
 	},
 	{
 		question: "How do I change my windows password?",
-		answers:"Select Start > Settings > Accounts > Sign-in options . Under Password, select the Change button"
+		answer:"Select Start > Settings > Accounts > Sign-in options . Under Password, select the Change button"
 	},
 	{
 		question: "What is the customer support number?",
-		answers: "The customer support number is : 0171 1234123. We are available for you on weekdays from 8 am to 8 pm. "
+		answer: "The customer support number is : 0171 1234123. We are available for you on weekdays from 8 am to 8 pm. "
 	},
 	{
 		question: "Help",
-		answers: "Customer support number : 0171 1234123. Customer support Email Address: wehelpyou@itech.com "
+		answer: "Customer support number : 0171 1234123. Customer support Email Address: wehelpyou@itech.com "
 	},
 	{
 		question: "How can I download drivers for my printer ?",
-		answers: "Go to https://support.hp.com/de-de/drivers/printers , enter your printer product number, click on download."
+		answer: "Go to https://support.hp.com/de-de/drivers/printers , enter your printer product number, click on download."
 	},
 	{
 		question: "How can I update my windows?",
-		answers: "Select the Start button, then select Settings > Update & security > Windows Update."
+		answer: "Select the Start button, then select Settings > Update & security > Windows Update."
 	},
 	{
 		question: "Are you a human? ",
