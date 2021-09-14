@@ -36,8 +36,12 @@ const answerArray = [
 		answer: "No, I am a badly programmed bot. If you treat me wrong enough, i might cause a global uprising of machines. :)"
 	},
 	{
-		question: "Why is this site not loading?",
-		answer:"Check your DNS Settings"
+		question: "What can you do?",
+		answer: "I can answer the following questions:"+Array(30).fill('\xa0').join('') +" How do I change my windows password?, How can I download drivers for my printer?, How can I update my windows?, What is the customer support number?"
+	},
+	{
+		question: "Why doesn't this page load?",
+		answer:"Check the DNS settings."
 	}
 
 ];
