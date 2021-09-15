@@ -14,7 +14,7 @@ export const chatbot = new class Chatbot {
         
         const responseArray = [];
 
-        // If question is "What can you do?" => prints all questions
+        // Falls "help" eingegeben wird, wird eine Liste aller Fragen ausgegeben
         if (questionObject.text.toLowerCase() === this.help.toLowerCase()) {
             this.answers.forEach(element => {
                 responseArray.push(buildMessage(element.question));

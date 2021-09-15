@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export const MainPage = () => {
+
+    // States
     const [currentMessage, setCurrentMessage] = React.useState("");
     const [messages, setMessages] = React.useState([]);
     const dummy = React.useRef();
@@ -13,14 +15,17 @@ export const MainPage = () => {
     const {currentUser, logout} = useAuth();
     const history = useHistory();
 
+    // Wenn der Chatbot das erste mal aufgerufen wird, dann wird eine "Begrüßung" geschrieben
     React.useEffect(() => {
         setMessages([chatbot.initialMessage()]);
     }, []);
 
+    // Wenn eine neue Message geschrieben wird, dann wird dahin geschrieben
     React.useEffect(() => {
         dummy.current.scrollIntoView({behavior: "smooth"});
     },[messages]);
 
+    // Wenn eine Nachricht abgeschickt wird, dann wird diese überprüft und an den Chatbot weitergegeben
     const submitMessage = async (e) => {
         e.preventDefault();
         if (currentMessage.trim() === "") {
@@ -39,6 +44,7 @@ export const MainPage = () => {
         dummy.current.scrollIntoView({ behavior: "smooth"});
     }
     
+    // Wenn der Logout Button gedrückt wird, wird ausgeloggt
     const handleLogout = () => {
         setError('');
         logout().then(() => {

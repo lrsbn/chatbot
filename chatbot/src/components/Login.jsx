@@ -10,6 +10,7 @@ export const Login = () => {
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
+    // Funktion zum Einloggen
     const submitLogin = (e) => {
         e.preventDefault();
         if (!loading) {
