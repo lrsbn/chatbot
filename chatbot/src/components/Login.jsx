@@ -22,7 +22,7 @@ export const Login = () => {
             }).catch(error => {
                 setError(error.code.replace("auth/", "").replace("-", " "));
             }).finally(() => {
-                setLoading(false)
+                setLoading(false);
             })
         }
     }
